@@ -27,9 +27,10 @@ typedef struct	s_mass
 	int		height;
 	int		weight;
 	char	**kart;
-	char 	**kart_ch;
 	void	*wind;
 	void	*mlx;
+	int 	**x0;
+	int 	**y0;
 }				t_mass;
 
 typedef struct  s_d
@@ -47,9 +48,6 @@ typedef struct	s_t
 {
 	int x;
 	int y;
-	int z;
-	int z0;
-	int z1;
 	int x1;
 	int y1;
 	int x0;
@@ -60,5 +58,6 @@ void			read_map(t_mass *map, int av, char **ac);
 void			draw(t_mass *map);
 void			draw_line(t_mass *map, t_t *point, long color);
 void			iso(int *x, int *y, int z);
+void			make_mass(t_mass *map);
 
 #endif

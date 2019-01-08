@@ -80,79 +80,110 @@ void	draw(t_mass *map)
 	t_t point;
 	int i;
 	int j;
-	int k;
+
+	ft_printf("START DRAW");
+	make_mass(map);
+	point.x0 = 0;
+	point.y0 = 0;
+	point.x1 = 0;
+	point.y1 = 0;
+	point.x = 0;
+	point.y = 0;
+	i = 0;
+	j = 0;
+	while (i < map->height - 1)
+	{
+		j = 0;
+		point.x0 = map->x0[i][j];
+		point.y0 = map->y0[i][j];
+		point.x1 = map->x0[i][j + 1];
+		point.y1 = map->y0[i][j + 1];
+		while (j < map->weight - 1)
+		{
+			if ((i == 1 && j == 1) || (i == 1 && j == 2))
+			{
+				ft_printf("x0 %d x1 %d ", point.x0, point.x1);
+				ft_printf("y0 %d y1 %d ", point.y0, point.y1);
+			}
+			draw_line(map, &point, 0x4cb55d);
+			j++;
+			point.x0 = map->x0[i][j];
+			point.y0 = map->y0[i][j];
+			point.x1 = map->x0[i][j + 1];
+			point.y1 = map->y0[i][j + 1];
+		}
+		//ft_printf("\n");
+		i++;
+	}
+	i = 0;
+	j = 0;
+	while (i < map->height - 1)
+	{
+		j = 0;
+		point.x0 = map->x0[i][j];
+		point.y0 = map->y0[i][j];
+		point.x1 = map->x0[i + 1][j];
+		point.y1 = map->y0[i + 1][j];
+		while (j < map->weight - 1)
+		{
+			draw_line(map, &point, 0xee6d7f);
+			j++;
+			point.x0 = map->x0[i][j];
+			point.y0 = map->y0[i][j];
+			point.x1 = map->x0[i + 1][j];
+			point.y1 = map->y0[i + 1][j];
+//			if (i == 1 && j == 1)
+//			{
+//				ft_printf("x0 %d x1 %d ", point.x0, point.x1);
+//				ft_printf("y0 %d y1 %d ", point.y0, point.y1);
+//			}
+		}
+//		ft_printf("\n");
+//		ft_printf("\n");
+		i++;
+	}
+}
+
+void	make_mass(t_mass *map)
+{
+	int i;
+	int j;
 	int a;
 	int b;
 
 	i = 0;
 	j = 0;
-	k = 0;
-	point.x0 = 60;
-	point.y0 = 60;
-	point.x1 = 100;
-	point.y1 = 60;
+	a = 20;
+	b = 20;
+	ft_printf("START\n");
+	map->x0 = (int**)malloc(sizeof(int*) * map->height + 1);
+	map->y0 = (int**)malloc(sizeof(int*) * map->height + 1);
 	while (i < map->height)
 	{
-		point.x0 = 60;
-		point.x1 = 100;
-		point.y0 += 40;
-		point.y1 += 40;
-		j = 0;
-		while (j < map->weight - 1)
+		j = 1;
+		map->x0[i] = (int*)malloc(sizeof(int) * map->weight + 1);
+		map->y0[i] = (int*)malloc(sizeof(int) * map->weight + 1);
+		map->x0[i][0] = 720 + a;
+		map->y0[i][0] = 100 + b;
+		while (j < map->weight)
 		{
-			if (map->kart_ch[k][1] == 0)
-			{
-				draw_line(map, &point, 0xf2f181);
-			}
-			else
-			{
-				a = point.y1;
-				b = point.y0;
-				point.y1 /= 3;
-				point.y0 /= 3;
-				draw_line(map, &point, 0xfefdfa);
-				point.y1 = a;
-				point.y0 = b;
-			}
-			point.x0 += 40;
-			point.x1 += 40;
-			k++;
+//			if (map->kart[i][j] > 0)
+//			{
+//				map->x0[i][j] = map->x0[i][j - 1] - 40;
+//				map->y0[i][j] = map->y0[i][0] - map->kart[i][j];
+//			}
+//			else
+//			{
+				map->x0[i][j] = map->x0[i][j - 1] - 40;
+				map->y0[i][j] = map->y0[i][j - 1] + 5;
+//			}
+			//ft_printf("x %d ", map->x0[i][j]);
+			//ft_printf("y %d ", map->y0[i][j]);
 			j++;
 		}
-		i++;
-	}
-	point.x0 = 60;
-	point.y0 = 60;
-	point.x1 = 60;
-	point.y1 = 100;
-	i = 0;
-	j = 0;
-	k = 0;
-	while (i < map->height)
-	{
-		point.x0 = 60;
-		point.x1 = 60;
-		point.y0 += 40;
-		point.y1 += 40;
-		j = 0;
-		while (j < map->weight - 1)
-		{
-			if (map->kart_ch[k][1] == 0)
-			{
-				draw_line(map, &point, 0xf2f181);
-			}
-			else
-			{
-				a = point.y1;
-				point.y1 /= 3;
-				draw_line(map, &point, 0xdd91d1);
-				point.y1 = a;
-			}
-			point.x0 += 40;
-			point.x1 += 40;
-			k++;
-			j++;
-		}
+		a = a + 20;
+		b = b + 20;
+		//ft_printf("\n");
 		i++;
 	}
 }

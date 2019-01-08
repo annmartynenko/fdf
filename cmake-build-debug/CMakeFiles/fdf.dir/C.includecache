@@ -24,6 +24,12 @@ unistd.h
 stdarg.h
 -
 
+/Users/amartyne/fdf/fdf.c
+mlx.h
+/Users/amartyne/fdf/mlx.h
+fdf.h
+/Users/amartyne/fdf/fdf.h
+
 /Users/amartyne/fdf/fdf.h
 unistd.h
 -

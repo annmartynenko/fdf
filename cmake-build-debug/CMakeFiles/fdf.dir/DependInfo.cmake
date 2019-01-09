@@ -97,6 +97,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/amartyne/fdf/libft/ft_tolower.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_tolower.c.o"
   "/Users/amartyne/fdf/libft/ft_toupper.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_toupper.c.o"
   "/Users/amartyne/fdf/libft/get_next_line.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/get_next_line.c.o"
+  "/Users/amartyne/fdf/make_mass.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/make_mass.c.o"
   "/Users/amartyne/fdf/read_map.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/read_map.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

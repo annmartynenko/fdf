@@ -21,11 +21,9 @@ int main(int ac, char **av)
 	map.weight = 0;
 	map.height = 0;
 	map.mlx = mlx_init();
-	map.wind = mlx_new_window(map.mlx, 1000, 1000, "FDF");
+	map.wind = mlx_new_window(map.mlx, 1500, 1200, "FDF");
 	read_map(&map, ac, av);
-	ft_printf("NOT DRAW\n");
 	draw(&map);
-	ft_printf("AFTER DRAW\n");
 	mlx_loop(map.mlx);
 	return (0);
 }

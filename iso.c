@@ -13,10 +13,10 @@
 #include "fdf.h"
 #include "mlx.h"
 
-void	iso(int *x, int *y, int z)
+void	iso(double *x, double *y, double z)
 {
-	int pr_x;
-	int pr_y;
+	double pr_x;
+	double pr_y;
 
 	pr_x = *x;
 	pr_y = *y;

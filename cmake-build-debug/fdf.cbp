@@ -371,6 +371,9 @@
 		<Unit filename="/Users/amartyne/fdf/libft/libft.h">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/amartyne/fdf/make_mass.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/amartyne/fdf/read_map.c">
 			<Option target="fdf"/>
 		</Unit>

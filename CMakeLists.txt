@@ -104,4 +104,5 @@ add_executable(fdf
         fdf.c
         read_map.c
         fdf.h
+        make_mass.c
         )

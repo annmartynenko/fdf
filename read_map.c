@@ -21,7 +21,7 @@ void	fill_line(char *line, char *file, int *k, int weight)
 	{
 		if(ft_isdigit(file[(*k)]))
 		{
-			line[j] = (char) ft_atoi(&file[(*k)]);
+			line[j] = (char)ft_atoi(&file[(*k)]);
 			ft_printf("%3d", line[j]);
 			j++;
 		}
@@ -49,7 +49,6 @@ void	fill_kart(t_mass *map, char *file)
 		i++;
 	}
 	map->kart[i] = 0;
-	ft_printf("FILL KART\n");
 }
 
 void	read_map(t_mass *map, int av, char **ac)
@@ -72,6 +71,5 @@ void	read_map(t_mass *map, int av, char **ac)
 		ft_strdel(&tmp);
 	}
 	fill_kart(map, file);
-	ft_printf("FINISH KART\n");
 }
 

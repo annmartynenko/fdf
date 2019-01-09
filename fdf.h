@@ -29,35 +29,23 @@ typedef struct	s_mass
 	char	**kart;
 	void	*wind;
 	void	*mlx;
-	int 	**x0;
-	int 	**y0;
 }				t_mass;
 
-typedef struct  s_d
+typedef struct	s_xyz
 {
-	int dx;
-	int dy;
-	int d;
-	int d1;
-	int d2;
-	int sx;
-	int sy;
-}				t_d;
-
-typedef struct	s_t
-{
-	int x;
-	int y;
-	int x1;
-	int y1;
-	int x0;
-	int y0;
-}				t_t;
+	double	x;
+	double	y;
+	double 	z;
+	int 	color;
+}				t_xyz;
 
 void			read_map(t_mass *map, int av, char **ac);
 void			draw(t_mass *map);
-void			draw_line(t_mass *map, t_t *point, long color);
-void			iso(int *x, int *y, int z);
-void			make_mass(t_mass *map);
+void			iso(double *x, double *y, double z);
+t_xyz			**make_mass(t_mass *map);
+void			rotation_z(double *x, double *y, double z);
+void			rotation_y(double *x, double *y, double z);
+void			rotation_x(double *x, double *y, double z);
+void			line(t_mass *fdf, t_xyz *d0, t_xyz *d1);
 
 #endif

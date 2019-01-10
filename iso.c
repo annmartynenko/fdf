@@ -23,3 +23,23 @@ void	iso(double *x, double *y, double z)
 	*x = (pr_x - pr_y) * cos(0.523599);
 	*y = -z + (pr_x + pr_y) * sin(0.523599);
 }
+
+void	do_iso(t_mass *map)
+{
+	int i;
+	int j;
+
+	midpoint(map, 1);
+	i = 0;
+	while (i < map->height)
+	{
+		j = 0;
+		while (j < map->weight)
+		{
+			iso(&map->coord[i][j].x, &map->coord[i][j].y, map->coord[i][j].z);
+			j++;
+		}
+		i++;
+	}
+	midpoint(map, 2);
+}

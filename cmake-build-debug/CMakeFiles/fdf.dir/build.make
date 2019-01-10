@@ -1279,18 +1279,31 @@ CMakeFiles/fdf.dir/read_map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/read_map.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/amartyne/fdf/read_map.c -o CMakeFiles/fdf.dir/read_map.c.s
 
-CMakeFiles/fdf.dir/make_mass.c.o: CMakeFiles/fdf.dir/flags.make
-CMakeFiles/fdf.dir/make_mass.c.o: ../make_mass.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amartyne/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/fdf.dir/make_mass.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/make_mass.c.o   -c /Users/amartyne/fdf/make_mass.c
+CMakeFiles/fdf.dir/rotation.c.o: CMakeFiles/fdf.dir/flags.make
+CMakeFiles/fdf.dir/rotation.c.o: ../rotation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amartyne/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/fdf.dir/rotation.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/rotation.c.o   -c /Users/amartyne/fdf/rotation.c
 
-CMakeFiles/fdf.dir/make_mass.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fdf.dir/make_mass.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/amartyne/fdf/make_mass.c > CMakeFiles/fdf.dir/make_mass.c.i
+CMakeFiles/fdf.dir/rotation.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fdf.dir/rotation.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/amartyne/fdf/rotation.c > CMakeFiles/fdf.dir/rotation.c.i
 
-CMakeFiles/fdf.dir/make_mass.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/make_mass.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/amartyne/fdf/make_mass.c -o CMakeFiles/fdf.dir/make_mass.c.s
+CMakeFiles/fdf.dir/rotation.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/rotation.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/amartyne/fdf/rotation.c -o CMakeFiles/fdf.dir/rotation.c.s
+
+CMakeFiles/fdf.dir/ft_atoi_base.c.o: CMakeFiles/fdf.dir/flags.make
+CMakeFiles/fdf.dir/ft_atoi_base.c.o: ../ft_atoi_base.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amartyne/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/fdf.dir/ft_atoi_base.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/fdf.dir/ft_atoi_base.c.o   -c /Users/amartyne/fdf/ft_atoi_base.c
+
+CMakeFiles/fdf.dir/ft_atoi_base.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/fdf.dir/ft_atoi_base.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/amartyne/fdf/ft_atoi_base.c > CMakeFiles/fdf.dir/ft_atoi_base.c.i
+
+CMakeFiles/fdf.dir/ft_atoi_base.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/fdf.dir/ft_atoi_base.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/amartyne/fdf/ft_atoi_base.c -o CMakeFiles/fdf.dir/ft_atoi_base.c.s
 
 # Object files for target fdf
 fdf_OBJECTS = \
@@ -1388,7 +1401,8 @@ fdf_OBJECTS = \
 "CMakeFiles/fdf.dir/libft/get_next_line.c.o" \
 "CMakeFiles/fdf.dir/fdf.c.o" \
 "CMakeFiles/fdf.dir/read_map.c.o" \
-"CMakeFiles/fdf.dir/make_mass.c.o"
+"CMakeFiles/fdf.dir/rotation.c.o" \
+"CMakeFiles/fdf.dir/ft_atoi_base.c.o"
 
 # External object files for target fdf
 fdf_EXTERNAL_OBJECTS =
@@ -1487,10 +1501,11 @@ fdf: CMakeFiles/fdf.dir/libft/ft_toupper.c.o
 fdf: CMakeFiles/fdf.dir/libft/get_next_line.c.o
 fdf: CMakeFiles/fdf.dir/fdf.c.o
 fdf: CMakeFiles/fdf.dir/read_map.c.o
-fdf: CMakeFiles/fdf.dir/make_mass.c.o
+fdf: CMakeFiles/fdf.dir/rotation.c.o
+fdf: CMakeFiles/fdf.dir/ft_atoi_base.c.o
 fdf: CMakeFiles/fdf.dir/build.make
 fdf: CMakeFiles/fdf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/amartyne/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Linking C executable fdf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/amartyne/fdf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Linking C executable fdf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fdf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

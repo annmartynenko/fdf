@@ -18,16 +18,14 @@ void	draw(t_mass *map)
 {
 	int i;
 	int j;
-	t_xyz **coord;
 
-	coord = make_mass(map);
 	i = 0;
 	while (i < map->height)
 	{
 		j = 0;
 		while (j < map->weight - 1)
 		{
-			line(map, &coord[i][j], &coord[i][j + 1]);
+			line(map, &map->coord[i][j], &map->coord[i][j + 1]);
 			j++;
 		}
 		i++;
@@ -38,51 +36,64 @@ void	draw(t_mass *map)
 		j = 0;
 		while (j < map->weight)
 		{
-			line(map, &coord[i][j], &coord[i + 1][j]);
+			line(map, &map->coord[i][j], &map->coord[i + 1][j]);
 			j++;
 		}
 		i++;
 	}
 }
 
-t_xyz	**make_mass(t_mass *map)
+void	midpoint(t_mass *map, int mark)
 {
 	int i;
 	int j;
-	double b;
-	t_xyz **coord;
 
-	i = 0;
-	j = 0;
-	b = 20;
-	coord = (t_xyz**)malloc(sizeof(t_xyz*) * map->height + 1);
-	while (i < map->height)
-	{
-		coord[i] = (t_xyz*)malloc(sizeof(t_xyz) * map->weight + 1);
-		coord[i][0].x = 400 - (map->weight * 40) / 2 + 1500 / 2;
-		coord[i][0].y = 20 + b - (map->height * 40) / 2 + 1200 / 2;
-		coord[i][0].z = (double)map->kart[i][j];
-		j = 1;
-		while (j < map->weight)
-		{
-			coord[i][j].x = coord[i][j - 1].x + 40;
-			coord[i][j].y = coord[i][j - 1].y;
-			coord[i][j].z = (double)map->kart[i][j] * 2;
-			j++;
-		}
-		b += 40;
-		i++;
-	}
 	i = 0;
 	while (i < map->height)
 	{
 		j = 0;
 		while (j < map->weight)
 		{
-			iso(&coord[i][j].x, &coord[i][j].y, coord[i][j].z);
+			if (mark == 1)
+			{
+				map->coord[i][j].x = map->coord[i][j].x - (map->weight * 40) / 2;
+				map->coord[i][j].y = map->coord[i][j].y - (map->height * 40) / 2;
+			}
+			else if (mark == 2)
+			{
+				map->coord[i][j].x = map->coord[i][j].x + 1500 / 2;
+				map->coord[i][j].y = map->coord[i][j].y + 1200 / 2;
+			}
 			j++;
 		}
 		i++;
 	}
-	return (coord);
 }
+
+//void	make_mass(t_mass *map)
+//{
+//	int i;
+//	int j;
+//	double b;
+//
+//	i = 0;
+//	j = 0;
+//	b = 0;
+//	while (i < map->height)
+//	{
+//		map->coord[i] = (t_xyz*)malloc(sizeof(t_xyz) * map->weight + 1);
+//		map->coord[i][0].x = 0;
+//		map->coord[i][0].y = 0 + b;
+//		map->coord[i][0].z = (double)map->kart[i][j];
+//		j = 1;
+//		while (j < map->weight)
+//		{
+//			map->coord[i][j].x = map->coord[i][j - 1].x + 40;
+//			map->coord[i][j].y = map->coord[i][j - 1].y;
+//			map->coord[i][j].z = (double)map->kart[i][j] * 2;
+//			j++;
+//		}
+//		b += 40;
+//		i++;
+//	}
+//}

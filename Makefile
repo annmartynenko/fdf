@@ -12,7 +12,7 @@
 
 NAME =  fdf
 
-SRC = fdf.c read_map.c draw_line.c iso.c make_mass.c rotation.c
+SRC = fdf.c read_map.c draw_line.c iso.c make_mass.c rotation.c ft_atoi_base.c
 
 HDR = fdf.h get_next_line.h
 

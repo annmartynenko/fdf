@@ -93,7 +93,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/fdf.dir/libft/get_next_line.c.o"
   "CMakeFiles/fdf.dir/fdf.c.o"
   "CMakeFiles/fdf.dir/read_map.c.o"
-  "CMakeFiles/fdf.dir/make_mass.c.o"
+  "CMakeFiles/fdf.dir/rotation.c.o"
+  "CMakeFiles/fdf.dir/ft_atoi_base.c.o"
   "fdf.pdb"
   "fdf"
 )

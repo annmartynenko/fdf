@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/amartyne/fdf/fdf.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/fdf.c.o"
+  "/Users/amartyne/fdf/ft_atoi_base.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/ft_atoi_base.c.o"
   "/Users/amartyne/fdf/libft/ft_arrfree.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_arrfree.c.o"
   "/Users/amartyne/fdf/libft/ft_atoi.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_atoi.c.o"
   "/Users/amartyne/fdf/libft/ft_bzero.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_bzero.c.o"
@@ -97,8 +98,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/amartyne/fdf/libft/ft_tolower.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_tolower.c.o"
   "/Users/amartyne/fdf/libft/ft_toupper.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_toupper.c.o"
   "/Users/amartyne/fdf/libft/get_next_line.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/get_next_line.c.o"
-  "/Users/amartyne/fdf/make_mass.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/make_mass.c.o"
   "/Users/amartyne/fdf/read_map.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/read_map.c.o"
+  "/Users/amartyne/fdf/rotation.c" "/Users/amartyne/fdf/cmake-build-debug/CMakeFiles/fdf.dir/rotation.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

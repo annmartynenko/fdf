@@ -177,6 +177,60 @@ ft_atoi_base.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_atoi_base.c.s
 .PHONY : ft_atoi_base.c.s
 
+ft_strlen_chr.o: ft_strlen_chr.c.o
+
+.PHONY : ft_strlen_chr.o
+
+# target to build an object file
+ft_strlen_chr.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_strlen_chr.c.o
+.PHONY : ft_strlen_chr.c.o
+
+ft_strlen_chr.i: ft_strlen_chr.c.i
+
+.PHONY : ft_strlen_chr.i
+
+# target to preprocess a source file
+ft_strlen_chr.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_strlen_chr.c.i
+.PHONY : ft_strlen_chr.c.i
+
+ft_strlen_chr.s: ft_strlen_chr.c.s
+
+.PHONY : ft_strlen_chr.s
+
+# target to generate assembly for a file
+ft_strlen_chr.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_strlen_chr.c.s
+.PHONY : ft_strlen_chr.c.s
+
+iso.o: iso.c.o
+
+.PHONY : iso.o
+
+# target to build an object file
+iso.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/iso.c.o
+.PHONY : iso.c.o
+
+iso.i: iso.c.i
+
+.PHONY : iso.i
+
+# target to preprocess a source file
+iso.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/iso.c.i
+.PHONY : iso.c.i
+
+iso.s: iso.c.s
+
+.PHONY : iso.s
+
+# target to generate assembly for a file
+iso.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/iso.c.s
+.PHONY : iso.c.s
+
 libft/ft_arrfree.o: libft/ft_arrfree.c.o
 
 .PHONY : libft/ft_arrfree.o
@@ -2661,6 +2715,33 @@ libft/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
+make_mass.o: make_mass.c.o
+
+.PHONY : make_mass.o
+
+# target to build an object file
+make_mass.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/make_mass.c.o
+.PHONY : make_mass.c.o
+
+make_mass.i: make_mass.c.i
+
+.PHONY : make_mass.i
+
+# target to preprocess a source file
+make_mass.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/make_mass.c.i
+.PHONY : make_mass.c.i
+
+make_mass.s: make_mass.c.s
+
+.PHONY : make_mass.s
+
+# target to generate assembly for a file
+make_mass.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/make_mass.c.s
+.PHONY : make_mass.c.s
+
 read_map.o: read_map.c.o
 
 .PHONY : read_map.o
@@ -2688,33 +2769,6 @@ read_map.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/read_map.c.s
 .PHONY : read_map.c.s
 
-rotation.o: rotation.c.o
-
-.PHONY : rotation.o
-
-# target to build an object file
-rotation.c.o:
-	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/rotation.c.o
-.PHONY : rotation.c.o
-
-rotation.i: rotation.c.i
-
-.PHONY : rotation.i
-
-# target to preprocess a source file
-rotation.c.i:
-	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/rotation.c.i
-.PHONY : rotation.c.i
-
-rotation.s: rotation.c.s
-
-.PHONY : rotation.s
-
-# target to generate assembly for a file
-rotation.c.s:
-	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/rotation.c.s
-.PHONY : rotation.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2730,6 +2784,12 @@ help:
 	@echo "... ft_atoi_base.o"
 	@echo "... ft_atoi_base.i"
 	@echo "... ft_atoi_base.s"
+	@echo "... ft_strlen_chr.o"
+	@echo "... ft_strlen_chr.i"
+	@echo "... ft_strlen_chr.s"
+	@echo "... iso.o"
+	@echo "... iso.i"
+	@echo "... iso.s"
 	@echo "... libft/ft_arrfree.o"
 	@echo "... libft/ft_arrfree.i"
 	@echo "... libft/ft_arrfree.s"
@@ -3006,12 +3066,12 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
+	@echo "... make_mass.o"
+	@echo "... make_mass.i"
+	@echo "... make_mass.s"
 	@echo "... read_map.o"
 	@echo "... read_map.i"
 	@echo "... read_map.s"
-	@echo "... rotation.o"
-	@echo "... rotation.i"
-	@echo "... rotation.s"
 .PHONY : help
 
 

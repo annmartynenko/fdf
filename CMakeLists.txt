@@ -104,6 +104,8 @@ add_executable(fdf
         fdf.c
         read_map.c
         fdf.h
-        rotation.c
         ft_atoi_base.c
+        ft_strlen_chr.c
+        iso.c
+        make_mass.c
         )

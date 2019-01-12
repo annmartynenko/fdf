@@ -13,7 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define BUFF_SIZE  1
+# define BUFF_SIZE  1000
 # define LOW 0
 # define UP 1
 # define P 2

@@ -9,6 +9,14 @@ CMakeFiles/fdf.dir/ft_atoi_base.c.o: .././libft/libft.h
 CMakeFiles/fdf.dir/ft_atoi_base.c.o: ../fdf.h
 CMakeFiles/fdf.dir/ft_atoi_base.c.o: ../ft_atoi_base.c
 
+CMakeFiles/fdf.dir/ft_strlen_chr.c.o: .././libft/libft.h
+CMakeFiles/fdf.dir/ft_strlen_chr.c.o: ../fdf.h
+CMakeFiles/fdf.dir/ft_strlen_chr.c.o: ../ft_strlen_chr.c
+
+CMakeFiles/fdf.dir/iso.c.o: .././libft/libft.h
+CMakeFiles/fdf.dir/iso.c.o: ../fdf.h
+CMakeFiles/fdf.dir/iso.c.o: ../iso.c
+
 CMakeFiles/fdf.dir/libft/ft_arrfree.c.o: ../libft/ft_arrfree.c
 CMakeFiles/fdf.dir/libft/ft_arrfree.c.o: ../libft/libft.h
 
@@ -273,11 +281,11 @@ CMakeFiles/fdf.dir/libft/ft_toupper.c.o: ../libft/ft_toupper.c
 CMakeFiles/fdf.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
 CMakeFiles/fdf.dir/libft/get_next_line.c.o: ../libft/libft.h
 
+CMakeFiles/fdf.dir/make_mass.c.o: .././libft/libft.h
+CMakeFiles/fdf.dir/make_mass.c.o: ../fdf.h
+CMakeFiles/fdf.dir/make_mass.c.o: ../make_mass.c
+
 CMakeFiles/fdf.dir/read_map.c.o: .././libft/libft.h
 CMakeFiles/fdf.dir/read_map.c.o: ../fdf.h
 CMakeFiles/fdf.dir/read_map.c.o: ../read_map.c
-
-CMakeFiles/fdf.dir/rotation.c.o: .././libft/libft.h
-CMakeFiles/fdf.dir/rotation.c.o: ../fdf.h
-CMakeFiles/fdf.dir/rotation.c.o: ../rotation.c
 

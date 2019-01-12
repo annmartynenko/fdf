@@ -12,39 +12,127 @@
 
 #include "fdf.h"
 #include "mlx.h"
+#include <stdio.h>
 
-void	rotation_x(double *x, double *y, double z)
+void	rotation_x(t_mass *map, int mark, double angle)
 {
-	double pr_x;
+	double pr_z;
 	double pr_y;
+	int i;
+	int j;
 
-	pr_x = *x;
-	pr_y = *y;
-	*x = pr_x;
-	*y = pr_y * cos(0.523599) + z * sin(0.523599);
-	z = -pr_y * sin(0.523599) + z * cos(0.523599);
+	midpoint(map, mark);
+	i = 0;
+	while (i < map->height)
+	{
+		j = 0;
+		while (j < map->weight)
+		{
+			pr_z = map->coord[i][j].z;
+			pr_y = map->coord[i][j].y;
+			map->coord[i][j].y = pr_y * cos(angle) + pr_z * sin(angle);
+			map->coord[i][j].z = -pr_y * sin(angle) + pr_z * cos(angle);
+			j++;
+		}
+		i++;
+	}
+	midpoint(map, 2);
 }
 
-void	rotation_y(double *x, double *y, double z)
+void	rotation_y(t_mass *map, int mark, double angle)
 {
 	double pr_x;
-	double pr_y;
+	double pr_z;
+	int i;
+	int j;
 
-	pr_x = *x;
-	pr_y = *y;
-	*x = pr_x * cos(0.523599) + z * sin(0.523599);
-	*y = pr_y;
-	z = -pr_x * sin(0.523599) + z * cos(0.523599);
+	midpoint(map, mark);
+	i = 0;
+	while (i < map->height)
+	{
+		j = 0;
+		while (j < map->weight)
+		{
+			pr_x = map->coord[i][j].x;
+			pr_z = map->coord[i][j].z;
+			map->coord[i][j].x = pr_x * cos(angle) + pr_z * sin(angle);
+			map->coord[i][j].z = -pr_x * sin(angle) + pr_z * cos(angle);
+			j++;
+		}
+		i++;
+	}
+	midpoint(map, 2);
 }
 
-void	rotation_z(double *x, double *y, double z)
+void	rotation_z(t_mass *map, int mark, double angle)
 {
 	double pr_x;
 	double pr_y;
+	int i;
+	int j;
 
-	pr_x = *x;
-	pr_y = *y;
-	*x = pr_x * cos(0.523599) - pr_y * sin(0.523599);
-	*y = pr_x * sin(0.523599) + pr_y * cos(0.523599);
-	z = z + 0;
+	midpoint(map, mark);
+	i = 0;
+	while (i < map->height)
+	{
+		j = 0;
+		while (j < map->weight)
+		{
+			pr_x = map->coord[i][j].x;
+			pr_y = map->coord[i][j].y;
+			map->coord[i][j].x = pr_x * cos(angle) - pr_y * sin(angle);
+			map->coord[i][j].y = pr_x * sin(angle) + pr_y * cos(angle);
+			j++;
+		}
+		i++;
+	}
+	midpoint(map, 2);
+}
+void	move_xyz(t_mass *map, int keycode)
+{
+	if (keycode == 125)
+	{
+		map->angle[0] -= 0.05;
+		rotation_x(map, 3, map->angle[0]);
+		mlx_clear_window(map->mlx, map->wind);
+		draw(map);
+	}
+	else if (keycode == 126)
+	{
+		map->angle[0] += 0.05;
+		rotation_x(map, 3, map->angle[0]);
+		mlx_clear_window(map->mlx, map->wind);
+		draw(map);
+	}
+//	printf("angle %f\n", map->angle[0]);
+	if (keycode == 123)
+	{
+		map->angle[1] -= 0.05;
+		rotation_y(map, 3, map->angle[1]);
+		mlx_clear_window(map->mlx, map->wind);
+		draw(map);
+	}
+	else if (keycode == 124)
+	{
+		map->angle[1] += 0.05;
+		rotation_y(map, 3, map->angle[1]);
+		mlx_clear_window(map->mlx, map->wind);
+		draw(map);
+	}
+//	printf("angle %f\n", map->angle[1]);
+	if (keycode == 115)
+	{
+		map->angle[2] -= 0.05;
+		rotation_z(map, 3, map->angle[2]);
+		mlx_clear_window(map->mlx, map->wind);
+		draw(map);
+	}
+	else if (keycode == 119)
+	{
+		map->angle[2] += 0.05;
+		rotation_z(map, 3, map->angle[2]);
+		mlx_clear_window(map->mlx, map->wind);
+		draw(map);
+	}
+//	printf("angle %f\n", map->angle[2]);
 }

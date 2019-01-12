@@ -1,46 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iso.c                                              :+:      :+:    :+:   */
+/*   ft_strlen_chr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amartyne <amartyne@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/04 17:23:56 by amartyne          #+#    #+#             */
-/*   Updated: 2019/01/04 17:23:58 by amartyne         ###   ########.fr       */
+/*   Created: 2019/01/11 14:50:50 by amartyne          #+#    #+#             */
+/*   Updated: 2019/01/11 14:50:51 by amartyne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include "mlx.h"
 
-void	iso(double *x, double *y, double z)
+size_t	ft_strlen_chr(const char *s, int c)
 {
-	double pr_x;
-	double pr_y;
+	size_t i;
+	size_t len;
 
-	pr_x = *x;
-	pr_y = *y;
-	*x = (pr_x - pr_y) * cos(0.523599);
-	*y = -z + (pr_x + pr_y) * sin(0.523599);
-}
-
-void	do_iso(t_mass *map)
-{
-	int i;
-	int j;
-
-	midpoint(map, 1);
 	i = 0;
-	while (i < map->height)
+	len = 0;
+	if (s == NULL || s[i] == '\0')
+		return (0);
+	while (s[i])
 	{
-		j = 0;
-		while (j < map->weight)
-		{
-			iso(&map->coord[i][j].x, &map->coord[i][j].y, map->coord[i][j].z);
-			j++;
-		}
+		if (s[i] == c)
+			len++;
 		i++;
 	}
-	midpoint(map, 2);
-	ft_printf("CHECK4\n");
+	return (len);
 }

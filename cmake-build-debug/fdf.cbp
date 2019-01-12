@@ -95,6 +95,12 @@
 		<Unit filename="/Users/amartyne/fdf/ft_atoi_base.c">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/amartyne/fdf/ft_strlen_chr.c">
+			<Option target="fdf"/>
+		</Unit>
+		<Unit filename="/Users/amartyne/fdf/iso.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/amartyne/fdf/libft/ft_arrfree.c">
 			<Option target="fdf"/>
 		</Unit>
@@ -374,10 +380,10 @@
 		<Unit filename="/Users/amartyne/fdf/libft/libft.h">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/Users/amartyne/fdf/read_map.c">
+		<Unit filename="/Users/amartyne/fdf/make_mass.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/Users/amartyne/fdf/rotation.c">
+		<Unit filename="/Users/amartyne/fdf/read_map.c">
 			<Option target="fdf"/>
 		</Unit>
 		<Unit filename="/Users/amartyne/fdf/CMakeLists.txt">

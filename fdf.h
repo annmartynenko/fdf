@@ -26,8 +26,8 @@ typedef struct	s_xyz
 {
 	double	x;
 	double	y;
-	double 	z;
-	int 	color;
+	double	z;
+	int		color;
 }				t_xyz;
 
 typedef struct	s_mass
@@ -38,13 +38,13 @@ typedef struct	s_mass
 	void	*mlx;
 	t_xyz	**coord;
 	double	angle[3];
+	double	koef;
+	double	center[2];
 }				t_mass;
-
 
 void			read_map(t_mass *map, int av, char **ac);
 void			draw(t_mass *map);
 void			iso(double *x, double *y, double z);
-void			make_mass(t_mass *map);
 void			rotation_z(t_mass *map, int mark, double angle);
 void			rotation_y(t_mass *map, int mark, double angle);
 void			rotation_x(t_mass *map, int mark, double angle);
@@ -54,7 +54,10 @@ void			do_iso(t_mass *map);
 int				ft_atoi_base(const char *str, int base);
 size_t			ft_strlen_chr(const char *s, int c);
 void			change(t_mass *map);
-void			move_xyz(t_mass * map, int keycode);
-void			move(t_mass * map, int keycode);
+void			move_xy(t_mass *map, int keycode);
+void			move_z(t_mass *map, int keycode);
+void			move(t_mass *map, int keycode);
+void			zoom(t_mass *map, int keycode);
+void			fill_kart(t_mass *map, char *file);
 
 #endif

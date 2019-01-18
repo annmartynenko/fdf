@@ -13,34 +13,42 @@
 #include "fdf.h"
 #include "mlx.h"
 
-void	iso(double *x, double *y, double z)
-{
-	double pr_x;
-	double pr_y;
-
-	pr_x = *x;
-	pr_y = *y;
-	*x = (pr_x - pr_y) * cos(0.523599);
-	*y = -z + (pr_x + pr_y) * sin(0.523599);
-}
-
-void	do_iso(t_mass *map)
+void	small_big(t_mass *map, int mark)
 {
 	int i;
 	int j;
 
-	midpoint(map, 1);
+	midpoint(map, mark);
 	i = 0;
 	while (i < map->height)
 	{
 		j = 0;
 		while (j < map->weight)
 		{
-			iso(&map->coord[i][j].x, &map->coord[i][j].y, map->coord[i][j].z);
+			map->coord[i][j].x *= map->koef;
+			map->coord[i][j].y *= map->koef;
+			map->coord[i][j].z *= map->koef;
 			j++;
 		}
 		i++;
 	}
 	midpoint(map, 2);
-	ft_printf("CHECK4\n");
+}
+
+void	zoom(t_mass *map, int keycode)
+{
+	if (keycode == 69)
+	{
+		map->koef = 1.1;
+		small_big(map, 3);
+		mlx_clear_window(map->mlx, map->wind);
+		draw(map);
+	}
+	else if (keycode == 78)
+	{
+		map->koef = 0.9;
+		small_big(map, 3);
+		mlx_clear_window(map->mlx, map->wind);
+		draw(map);
+	}
 }

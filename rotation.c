@@ -16,10 +16,10 @@
 
 void	rotation_x(t_mass *map, int mark, double angle)
 {
-	double pr_z;
-	double pr_y;
-	int i;
-	int j;
+	double	pr_z;
+	double	pr_y;
+	int		i;
+	int		j;
 
 	midpoint(map, mark);
 	i = 0;
@@ -41,10 +41,10 @@ void	rotation_x(t_mass *map, int mark, double angle)
 
 void	rotation_y(t_mass *map, int mark, double angle)
 {
-	double pr_x;
-	double pr_z;
-	int i;
-	int j;
+	double	pr_x;
+	double	pr_z;
+	int		i;
+	int		j;
 
 	midpoint(map, mark);
 	i = 0;
@@ -66,10 +66,10 @@ void	rotation_y(t_mass *map, int mark, double angle)
 
 void	rotation_z(t_mass *map, int mark, double angle)
 {
-	double pr_x;
-	double pr_y;
-	int i;
-	int j;
+	double	pr_x;
+	double	pr_y;
+	int		i;
+	int		j;
 
 	midpoint(map, mark);
 	i = 0;
@@ -88,51 +88,45 @@ void	rotation_z(t_mass *map, int mark, double angle)
 	}
 	midpoint(map, 2);
 }
-void	move_xyz(t_mass *map, int keycode)
+
+void	move_z(t_mass *map, int keycode)
 {
-	if (keycode == 125)
-	{
-		map->angle[0] -= 0.05;
-		rotation_x(map, 3, map->angle[0]);
-		mlx_clear_window(map->mlx, map->wind);
-		draw(map);
-	}
-	else if (keycode == 126)
-	{
-		map->angle[0] += 0.05;
-		rotation_x(map, 3, map->angle[0]);
-		mlx_clear_window(map->mlx, map->wind);
-		draw(map);
-	}
-//	printf("angle %f\n", map->angle[0]);
-	if (keycode == 123)
-	{
-		map->angle[1] -= 0.05;
-		rotation_y(map, 3, map->angle[1]);
-		mlx_clear_window(map->mlx, map->wind);
-		draw(map);
-	}
-	else if (keycode == 124)
-	{
-		map->angle[1] += 0.05;
-		rotation_y(map, 3, map->angle[1]);
-		mlx_clear_window(map->mlx, map->wind);
-		draw(map);
-	}
-//	printf("angle %f\n", map->angle[1]);
 	if (keycode == 115)
 	{
-		map->angle[2] -= 0.05;
+		map->angle[2] = -0.1;
 		rotation_z(map, 3, map->angle[2]);
-		mlx_clear_window(map->mlx, map->wind);
-		draw(map);
 	}
 	else if (keycode == 119)
 	{
-		map->angle[2] += 0.05;
+		map->angle[2] = 0.1;
 		rotation_z(map, 3, map->angle[2]);
-		mlx_clear_window(map->mlx, map->wind);
-		draw(map);
 	}
-//	printf("angle %f\n", map->angle[2]);
+	mlx_clear_window(map->mlx, map->wind);
+	draw(map);
+}
+
+void	move_xy(t_mass *map, int keycode)
+{
+	if (keycode == 125)
+	{
+		map->angle[0] = -0.1;
+		rotation_x(map, 3, map->angle[0]);
+	}
+	else if (keycode == 126)
+	{
+		map->angle[0] = 0.1;
+		rotation_x(map, 3, map->angle[0]);
+	}
+	else if (keycode == 123)
+	{
+		map->angle[1] = -0.1;
+		rotation_y(map, 3, map->angle[1]);
+	}
+	else if (keycode == 124)
+	{
+		map->angle[1] = 0.1;
+		rotation_y(map, 3, map->angle[1]);
+	}
+	mlx_clear_window(map->mlx, map->wind);
+	draw(map);
 }

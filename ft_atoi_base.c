@@ -13,26 +13,30 @@
 #include "fdf.h"
 #include "mlx.h"
 
-int	ft_atoi_base(const char *str, int base)
+int	ft_atoi_base(const char *s, int base)
 {
 	unsigned long int	a;
 	int					i;
 	int					b;
+	char				c;
 
 	i = 0;
 	b = 1;
 	a = 0;
-	while ((str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
-			str[i] == '\f' || str[i] == '\r' || str[i] == '\v') && str[i])
+	while (s[i] == ' ' || (s[i] > 8 && s[i] < 14))
 		i++;
-	if (str[i] == '-')
+	if (s[i] == '-')
 		b = -1;
-	if (str[i] == '-' || str[i] == '+')
+	if (s[i] == '-' || s[i] == '+')
 		i++;
-	while (((str[i] >= '0' && str[i] <= '9')  || (str[i] >= 'a' && str[i] <= 'f') \
-	|| (str[i] >= 'A' && str[i] <= 'F')) && str[i])
+	while (((s[i] >= '0' && s[i] <= '9') || (s[i] >= 'a' && s[i] <= 'f') \
+	|| (s[i] >= 'A' && s[i] <= 'F')) && s[i])
 	{
-		a = (a * base) + (str[i] - (str[i] <= 57 ? 48 : str[i] < 97 ? 55 : 87));
+		if (s[i] <= 57)
+			c = 48;
+		else
+			c = s[i] < 97 ? 55 : 87;
+		a = (a * base) + (s[i] - c);
 		i++;
 	}
 	return ((int)(a * b));

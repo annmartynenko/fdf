@@ -18,16 +18,14 @@ void	line(t_mass *fdf, t_xyz *d0, t_xyz *d1)
 {
 	double	xy[2];
 
-//	printf("x0 %f y0 %f\n", d0->x, d0->y);
-//	printf("x1 %f y1 %f\n", d1->x, d1->y);
 	xy[0] = d0->x;
 	xy[1] = d0->y;
 	if (fabs(d1->y - d0->y) > fabs(d1->x - d0->x))
 	{
 		while (d0->y > d1->y ? xy[1] >= d1->y : xy[1] <= d1->y)
 		{
-			//ft_printf("CHECK10\n");
-			xy[0] = ((xy[1] - d0->y) / (d0->y - d1->y) * (d0->x - d1->x) + d0->x);
+			xy[0] = ((xy[1] - d0->y) / (d0->y - d1->y) * \
+			(d0->x - d1->x) + d0->x);
 			mlx_pixel_put(fdf->mlx, fdf->wind, xy[0], xy[1], d0->color);
 			d1->y > d0->y ? xy[1]++ : xy[1]--;
 		}
@@ -36,8 +34,7 @@ void	line(t_mass *fdf, t_xyz *d0, t_xyz *d1)
 	{
 		while (d0->x > d1->x ? xy[0] >= d1->x : xy[0] <= d1->x)
 		{
-			//ft_printf("CHECK11\n");
-			xy[1] = ((xy[0] - d0->x) / (d0->x - d1->x) * (d0->y - d1->y) + d0->y);
+			xy[1] = ((xy[0] - d0->x) / (d0->x - d1->x) *(d0->y - d1->y) + d0->y);
 			mlx_pixel_put(fdf->mlx, fdf->wind, xy[0], xy[1], d0->color);
 			d1->x > d0->x ? xy[0]++ : xy[0]--;
 		}
@@ -55,13 +52,9 @@ void	draw(t_mass *map)
 		j = 0;
 		while (j < map->weight - 1)
 		{
-//			printf("\nx00 {%f} y00 {%f} \n CHECK8\n", map->coord[i][j].x, map->coord[i][j + 1].y);
-//			printf("\nx01 {%f} y01 {%f} \n CHECK8\n", map->coord[i][j].x, map->coord[i][j + 1].y);
 			line(map, &map->coord[i][j], &map->coord[i][j + 1]);
-//			printf("%f  %f ", map->coord[i][j].x, map->coord[i][j].y);
 			j++;
 		}
-//		printf("\n");
 		i++;
 	}
 	i = 0;

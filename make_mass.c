@@ -14,6 +14,25 @@
 #include "mlx.h"
 #include <stdio.h>
 
+void	marks(t_mass *map, int i, int j, int mark)
+{
+	if (mark == 1)
+	{
+		map->coord[i][j].x = map->coord[i][j].x - (map->weight * 40) / 2;
+		map->coord[i][j].y = map->coord[i][j].y - (map->height * 40) / 2;
+	}
+	else if (mark == 2)
+	{
+		map->coord[i][j].x = map->coord[i][j].x + 1500 / 2 + map->center[0];
+		map->coord[i][j].y = map->coord[i][j].y + 1200 / 2 + map->center[1];
+	}
+	else if (mark == 3)
+	{
+		map->coord[i][j].x = map->coord[i][j].x - 1500 / 2 - map->center[0];
+		map->coord[i][j].y = map->coord[i][j].y - 1200 / 2 - map->center[1];
+	}
+}
+
 void	midpoint(t_mass *map, int mark)
 {
 	int i;
@@ -25,34 +44,19 @@ void	midpoint(t_mass *map, int mark)
 		j = 0;
 		while (j < map->weight)
 		{
-			if (mark == 1)
-			{
-				map->coord[i][j].x = map->coord[i][j].x - (map->weight * 40) / 2;
-				map->coord[i][j].y = map->coord[i][j].y - (map->height * 40) / 2;
-			}
-			else if (mark == 2)
-			{
-				map->coord[i][j].x = map->coord[i][j].x + 1500 / 2;
-				map->coord[i][j].y = map->coord[i][j].y + 1200 / 2;
-			}
-			else if (mark == 3)
-			{
-				map->coord[i][j].x = map->coord[i][j].x - 1500 / 2;
-				map->coord[i][j].y = map->coord[i][j].y - 1200 / 2;
-			}
+			marks(map, i, j, mark);
 			j++;
 		}
 		i++;
 	}
 }
 
-void	up_down(t_mass *map, int mark, int plus)
+void	up_down(t_mass *map, int plus)
 {
-	double pr_y;
-	int i;
-	int j;
+	double	pr_y;
+	int		i;
+	int		j;
 
-	midpoint(map, mark);
 	i = 0;
 	while (i < map->height)
 	{
@@ -65,16 +69,14 @@ void	up_down(t_mass *map, int mark, int plus)
 		}
 		i++;
 	}
-	midpoint(map, 2);
 }
 
-void	left_right(t_mass *map, int mark, int plus)
+void	left_right(t_mass *map, int plus)
 {
-	double pr_x;
-	int i;
-	int j;
+	double	pr_x;
+	int		i;
+	int		j;
 
-	midpoint(map, mark);
 	i = 0;
 	while (i < map->height)
 	{
@@ -87,33 +89,30 @@ void	left_right(t_mass *map, int mark, int plus)
 		}
 		i++;
 	}
-	midpoint(map, 2);
 }
 
-//void	move(t_mass *map, int keycode)
-//{
-//	if (keycode == 1)
-//	{
-//		up_down(map, 3, 10);
-//		mlx_clear_window(map->mlx, map->wind);
-//		draw(map);
-//	}
-//	else if (keycode == 13)
-//	{
-//		up_down(map, 3, -10);
-//		mlx_clear_window(map->mlx, map->wind);
-//		draw(map);
-//	}
-//	if (keycode == 0)
-//	{
-//		left_right(map, 3, -10);
-//		mlx_clear_window(map->mlx, map->wind);
-//		draw(map);
-//	}
-//	else if (keycode == 2)
-//	{
-//		left_right(map, 3, 10);
-//		mlx_clear_window(map->mlx, map->wind);
-//		draw(map);
-//	}
-//}
+void	move(t_mass *map, int keycode)
+{
+	if (keycode == 1)
+	{
+		map->center[1] += 10;
+		up_down(map, 10);
+	}
+	else if (keycode == 13)
+	{
+		map->center[1] += -10;
+		up_down(map, -10);
+	}
+	else if (keycode == 0)
+	{
+		map->center[0] += -10;
+		left_right(map, -10);
+	}
+	else if (keycode == 2)
+	{
+		map->center[0] += 10;
+		left_right(map, 10);
+	}
+	mlx_clear_window(map->mlx, map->wind);
+	draw(map);
+}
